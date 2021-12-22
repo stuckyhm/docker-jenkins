@@ -117,7 +117,7 @@ APPLICATION_VERSION_EXT=$(echo ${DOCKER_IMAGE_TAG} | cut -d "-" -f 2-)
 
 echo ${TEXT}
 
-if [[ ${BUILD} -eq 1 ]]; then
+if [[ ${BUILD} -eq 1 ]] || [[ ${FORCE_BUILD} -eq 1 ]]; then
 	gitCommitAndPush
 	dockerBuildAndPush stucky/jenkins
 fi
