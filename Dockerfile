@@ -1,4 +1,6 @@
-FROM jenkins/jenkins:lts
+ARG BASE_IMAGE_TAG=2.319.1-lts-jdk11
+
+FROM jenkins/jenkins:${BASE_IMAGE_TAG}
 
 # if we want to install via apt
 USER root
